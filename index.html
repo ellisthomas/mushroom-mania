@@ -8,12 +8,29 @@
     <link rel="stylesheet" type="text/css" href="./styles/main.css">
 </head>
 
-<body>
+<body ng-app="MushroomApp">
+    <div>
+        <h1 class="list-inline center-block text-center">Mushroom Mania</h1>
+    </div>
+    <div ng-contoller="ItemCtrl">
+        <div class="row">
+            <div class="col-xs-8 col-xs-offset-2">
+                <div class="form-group">
+                    <label>Mushroom Finder</label>
+                    <input type="text" class="form-control" placeholder="Search Mushrooms ........." />
+                    <div class="radio list-inline center-block text-center">
+                        <label class="radio-inline">
+                            <input type="radio" id="poisonous" name="mushradio">Poisonous</label>
+                        <label class="radio-inline">
+                            <input type="radio" id="non-poisonous" name="mushradio">Non-poisonous</label>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
 
-
-
-
+    
     <script src="https://www.gstatic.com/firebasejs/3.9.0/firebase.js"></script>
     <script type="text/javascript" src="./lib/bower_components/jquery/dist/jquery.js"></script>
     <script type="text/javascript" src="./lib/bower_components/bootstrap/dist/js/bootstrap.js"></script>
