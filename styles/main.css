@@ -1,2 +1,12 @@
 body {
-  background-color: #f00; }
+  background-color: #ffffd3; }
+
+.jumbotron {
+  background-image: url("http://fullhdpictures.com/wp-content/uploads/2015/12/Mushrooms-Wallpaper-HD.jpg");
+  height: 300px;
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  border-bottom: 1px solid #ff6a00; }
+
+.list-inline {
+  color: black; }
