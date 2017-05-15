@@ -9,35 +9,36 @@
 </head>
 
 <body ng-app="MushroomApp">
-    <div>
+    
+    <div class="jumbotron">
         <h1 class="list-inline center-block text-center">Mushroom Mania</h1>
     </div>
-    <div ng-contoller="ItemCtrl">
-        <div class="row">
-            <div class="col-xs-8 col-xs-offset-2">
+    <div class="row">
+        <div class="col-xs-8 col-xs-offset-2">
+            <div ng-controller="mushroomCtrl">
                 <div class="form-group">
                     <label>Mushroom Finder</label>
-                    <input type="text" class="form-control" placeholder="Search Mushrooms ........." />
+                    <input type="text" class="form-control" placeholder="Search Mushrooms ........." ng-model="searchText" />
                     <div class="radio list-inline center-block text-center">
                         <label class="radio-inline">
-                            <input type="radio" id="poisonous" name="mushradio">Poisonous</label>
+                            <input type="radio" ng-model="isEdible" value="false">Poisonous</label>
                         <label class="radio-inline">
-                            <input type="radio" id="non-poisonous" name="mushradio">Non-poisonous</label>
+                            <input type="radio" ng-model="isEdible" value="true">Non-poisonous</label>
+                        <div ng-repeat="item in mushroomItems | filter: searchText | filter: isEdible">
+                            <h3>{{item.name}}</h3>
+                            <p>{{item.description}}</p>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-
-
-    
-    <script src="https://www.gstatic.com/firebasejs/3.9.0/firebase.js"></script>
-    <script type="text/javascript" src="./lib/bower_components/jquery/dist/jquery.js"></script>
-    <script type="text/javascript" src="./lib/bower_components/bootstrap/dist/js/bootstrap.js"></script>
-    <script type="text/javascript" src="./lib/bower_components/angular/angular.min.js"></script>
-    <script type="text/javascript" src="./javascripts/app.js"></script>
-    <script type="text/javascript" src="./javascripts/AppConstants.js"></script>
-    <script type="text/javascript" src="./javascripts/main.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/3.9.0/firebase.js"></script>
+        <script type="text/javascript" src="./lib/bower_components/jquery/dist/jquery.js"></script>
+        <script type="text/javascript" src="./lib/bower_components/bootstrap/dist/js/bootstrap.js"></script>
+        <script type="text/javascript" src="./lib/bower_components/angular/angular.min.js"></script>
+        <script type="text/javascript" src="./javascripts/app.js"></script>
+        <script type="text/javascript" src="./javascripts/AppConstants.js"></script>
+        <script type="text/javascript" src="./javascripts/main.js"></script>
 </body>
 
 </html>
