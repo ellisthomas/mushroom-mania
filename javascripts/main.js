@@ -4,7 +4,6 @@ app.run((FIREBASE_CONFIG) => {
 
 app.controller("mushroomCtrl", ($http, $q, $scope, FIREBASE_CONFIG) => {
 	$scope.mushroomItems = [];
-	$scope.isEdible = "";
 	$scope.searchText = "";
 	
 
